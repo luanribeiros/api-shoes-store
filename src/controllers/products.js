@@ -15,7 +15,7 @@ class ProductsController {
   async getById(req, res) {
     const { params: { id} } = req
     try {
-      const product = await this.Product.fin({ _id: id })
+      const product = await this.Product.find({ _id: id })
       res.send(product)
     } catch (err) {
       res.status(400).send(err.message)
